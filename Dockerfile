@@ -8,7 +8,7 @@ RUN chmod +x /entrypoint.sh
 
 ADD . .
 
-RUN npm install --location=global
+RUN npm install yarn --location=global
 
 RUN yarn
 
