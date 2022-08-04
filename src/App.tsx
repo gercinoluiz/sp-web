@@ -8,7 +8,7 @@ import { CustomTheme } from './styles/theme'
 function App() {
      return (
           <ChakraProvider theme={CustomTheme}>
-               <Home/>
+               <Home />
           </ChakraProvider>
      )
 }

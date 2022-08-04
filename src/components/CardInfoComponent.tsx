@@ -12,13 +12,25 @@ import { FaInstagramSquare } from 'react-icons/fa'
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { BsQuestionLg } from 'react-icons/bs'
 import { FaFacebookF } from 'react-icons/fa'
+import { GoQuote } from 'react-icons/go'
 
 interface CardInfoComponentProps {
-     type: 'mail' | 'phone' | 'work' | 'address' | 'Instagram' | 'LinkedIn' | 'Facebook' | 'Twitter' | 'WhatsApp'
+     type: 'mail' | 'phone' | 'work' | 'address' | 'Instagram' | 'LinkedIn' | 'Facebook' | 'Twitter' | 'WhatsApp' | 'phrase'
      to: string
      text: string
      aria_label: string
 }
+
+
+const sanitize = (text:string):string =>{
+
+     const array = text.split('/')
+
+   
+
+     return array[3]
+}
+
 
 export function CardInfoComponent({
      text,
@@ -26,6 +38,10 @@ export function CardInfoComponent({
      type,
      aria_label,
 }: CardInfoComponentProps) {
+
+
+console.log({to})
+
      return (
           <Flex
                as='a'
@@ -60,8 +76,11 @@ export function CardInfoComponent({
                               <BsLinkedin />
                          ) : type === 'WhatsApp' ? (
                               <IoLogoWhatsapp />
-                         ) : (
-                              <BsQuestionLg />
+                         ) : type === 'phrase' ? (
+                              <GoQuote />
+                              
+                         ): (
+                              <GoQuote />
                          )
                     }
                     bg='#FFF'
@@ -71,8 +90,11 @@ export function CardInfoComponent({
                     fontSize='16'
                     color='on_primary_container'
                     fontWeight='medium'
+                    maxW='250px'
                >
-                    {text}
+
+
+                    {type === 'Facebook' ? sanitize(text): text }
                </Text>
           </Flex>
      )

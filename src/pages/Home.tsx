@@ -63,13 +63,13 @@ export function Home() {
           const result = await endpoints().cards.getOne(
                'ADdasadssdasdasd-546465-asdASDadadasda'
           )
-          console.log(result?.data)
+          
 
           if (result?.data) {
                setUser(result.data)
           }
 
-          console.log(result?.data)
+          
      }
 
      return (
@@ -109,6 +109,7 @@ export function Home() {
                                    transform: 'translate(-50%, -50%)',
                               }}
                               marginRight='auto'
+                              src='https://github.com/account'
                          />
 
                          <Image
@@ -141,10 +142,10 @@ export function Home() {
                               >
                                    {user
                                         ? `${user?.profissao
-                                               .charAt(0)
-                                               .toUpperCase()}${user?.profissao.slice(
-                                               1
-                                          )}`
+                                             .charAt(0)
+                                             .toUpperCase()}${user?.profissao.slice(
+                                                  1
+                                             )}`
                                         : ''}
                               </Text>
                          </Flex>
@@ -161,6 +162,8 @@ export function Home() {
                                    mb='0.8rem'
                                    ml='1.5rem'
                                    mr='auto'
+                                   
+                                   
                               >
                                    <CardInfoComponent
                                         aria_label='Mail'
@@ -176,12 +179,7 @@ export function Home() {
                                         type='phone'
                                    />
 
-                                   <CardInfoComponent
-                                        aria_label='Trabalho'
-                                        text={`${user.frase}`}
-                                        to='/'
-                                        type='work'
-                                   />
+
 
                                    <CardInfoComponent
                                         aria_label='Endereço'
@@ -198,11 +196,18 @@ export function Home() {
                                                        socialMedia.nomeMidia
                                                   }
                                                   key={index}
-                                                  to={socialMedia.nomeMidia}
+                                                  to={socialMedia.endereco}
                                                   text={socialMedia.endereco}
                                              />
                                         )
                                    )}
+
+                                   <CardInfoComponent
+                                        aria_label='Frase'
+                                        text={`${user.frase}`}
+                                        to='/'
+                                        type='phrase'
+                                   />
                               </Box>
                          </VStack>
 

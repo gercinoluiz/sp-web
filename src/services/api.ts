@@ -21,7 +21,7 @@ export function endpoints() {
                          const card = await api.get<User>(
                               `/api/v1/v-cards?guid=${chaveCartaoVirtual}`
                          )
-                            console.log({card})
+                            
                          return card
                     } catch (error) {
                         console.log('endpoints/getOne',{error})
