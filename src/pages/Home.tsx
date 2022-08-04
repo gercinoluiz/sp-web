@@ -109,7 +109,8 @@ export function Home() {
                                    transform: 'translate(-50%, -50%)',
                               }}
                               marginRight='auto'
-                              src='https://github.com/account'
+                              src='https://media-exp1.licdn.com/dms/image/C4D03AQFXzs_1s0OBCA/profile-displayphoto-shrink_200_200/0/1612984796843?e=1665014400&v=beta&t=1jkcqbDPRo244ov3Ale3YP2SmDEfE6w3Cu-p-k3pGSA'
+                              
                          />
 
                          <Image
