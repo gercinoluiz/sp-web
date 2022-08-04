@@ -87,10 +87,10 @@ console.log({to})
                />
 
                <Text
-                    fontSize='16'
+                    fontSize='14'
                     color='on_primary_container'
                     fontWeight='medium'
-                    maxW='250px'
+                    maxW='230px'
                >
 
 
